@@ -41,6 +41,10 @@ func main() {
 
 	// Read cert file
 	FrontendCert, err := ioutil.ReadFile("./frontend.cert")
+
+	// Direct conneciton without traefik need to change cert
+	//FrontendCert, err := ioutil.ReadFile("./backend.cert")
+
 	fmt.Println("Cert Read:", FrontendCert)
 
 	if err != nil {
