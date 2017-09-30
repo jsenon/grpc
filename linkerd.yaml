@@ -1,0 +1,17 @@
+admin:
+  port: 9990
+  ip: 0.0.0.0
+
+routers:
+- protocol: h2
+  experimental: true
+  label: grpc
+  servers:
+  - port: 50053
+    ip: 0.0.0.0
+  identifier:
+    kind: io.l5d.header.path
+    segments: 2
+  dtab: |
+    / => /$/inet/50052;
+
