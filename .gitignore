@@ -1,4 +1,5 @@
 bin/
+main
 source-env
 pkg/
 src/
