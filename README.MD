@@ -29,4 +29,8 @@ Launch Client
 ./client 
 ```
 
+## Note/Issues
+
+Google grpc server sample only serve on tcp 
+Traefik redirect to an https server
 
