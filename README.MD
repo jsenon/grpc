@@ -8,7 +8,7 @@ Server hello listen on port :7777
 
 Server world listen on port :7778
 
-Traefik listen on port :4440 and rediret to http server
+Traefik listen on port :4140 and rediret to http server
 
 ## Launch traefik and grpc server
 
