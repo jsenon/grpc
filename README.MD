@@ -17,13 +17,15 @@ Autosigned certificate has been generated for frontend.local and backend.local
 ## Launch traefik and grpc server
 
 ```
-docker compose up -d
+docker-compose -f docker-compose-traefik-grpc.yml up
 ```
 
-Launch Server
+Server Hello Run on 7777
+
+Server World Run on 7778
 
 ```
-./server&
+client -> Traefik -> Hello -> traefik -> World
 ```
 
 ## Use it 
@@ -31,13 +33,13 @@ Launch Server
 Launch Client
 
 ```
-./client 
+./curl localhost:7777
 ```
 
 ## Note/Issues
 
-Google grpc server sample only serve on tcp 
-Traefik redirect to an https server
+Traefik redirect only to an http server over http2
+Traefik don't manage grpc protocol. We can't define grpc route
 
 # Linkerd
 

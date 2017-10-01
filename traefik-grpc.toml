@@ -1,17 +1,12 @@
-defaultEntryPoints = ["https"]
+defaultEntryPoints = ["grpc-in"]
 debug = true
 
 # For secure connection on backend.local
 RootCAs = [ "./backend.cert" ]
 
 [entryPoints]
-  [entryPoints.https]
-  address = ":4443"
-    [entryPoints.https.tls]
-     # For secure connection on frontend.local
-     [[entryPoints.https.tls.certificates]]
-     certFile = "./frontend.cert"
-     keyFile  = "./frontend.key"
+  [entryPoints.grpc-in]
+  address = ":4140"
 
 
 [web]
@@ -23,11 +18,19 @@ RootCAs = [ "./backend.cert" ]
   [backends.backend1]
     [backends.backend1.servers.server1]
     # Access on backend with HTTPS
-    url = "https://backend.local:50051"
+    url = "http://hello:7777"
+  [backends.backend2]
+    [backends.backend2.servers.server2]
+    # Access on backend with HTTPS
+    url = "http://world:7778"
 
 
 [frontends]
   [frontends.frontend1]
   backend = "backend1"
     [frontends.frontend1.routes.test_1]
-    rule = "Host:frontend.local"
+    rule = "Path:/toto"
+  [frontends.frontend2]
+  backend = "backend2"
+    [frontends.frontend2.routes.test_2]
+    rule = "Path:/"

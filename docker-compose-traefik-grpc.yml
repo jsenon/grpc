@@ -1,22 +1,27 @@
 version: '2'
 
 services:
-  proxy:
+  traefik:
     image: traefik:v1.4.0-rc3
     command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
-    networks:
-      - webgateway
     ports:
       - "80:80"
       - "8080:8080"
-      - "4443:4443"
+      - "4140:4140"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./traefik.toml:/traefik.toml
+      - ./traefik-grpc.toml:/traefik.toml
       - ./backend.cert:/backend.cert
       - ./frontend.key:/frontend.key
       - ./frontend.cert:/frontend.cert
+  hello:
+    image: buoyantio/helloworld
+    ports:
+    - "7777:7777"
+    command: -addr :7777 -text Hello -target traefik:4140 
+  world:
+    image: buoyantio/helloworld
+    ports:
+    - "7778:7778"
+    command: -addr :7778 -text world 
 
-networks:
-  webgateway:
-    driver: bridge
