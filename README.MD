@@ -10,12 +10,12 @@ Server world listen on port :7778
 
 Traefik listen on port :4140 and rediret to http server
 
-## Traefik grpc 
+## Traefik http 
 
 ### Launch traefik and grpc server
 
 ```
-docker-compose -f docker-compose-traefik-grpc.yml up
+docker-compose -f docker-compose-traefik.yml up
 ```
 
 Server Hello Run on 7777
@@ -39,7 +39,7 @@ Launch Client
 ### Launch traefik and grpc server
 
 ```
-docker-compose -f docker-compose-traefik.yml up
+docker-compose -f docker-compose-traefik-grpc.yml up
 ```
 
 Server Hello Run on 7777
