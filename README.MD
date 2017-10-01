@@ -34,7 +34,7 @@ Launch Client
 ./curl localhost:4140/toto
 ```
 
-## Traefik http
+## Traefik gRPC
 
 ### Launch traefik and grpc server
 
