@@ -10,7 +10,7 @@ services:
       - "4140:4140"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./traefik-grpc.toml:/traefik.toml
+      - ./traefik.toml:/traefik.toml
       - ./backend.cert:/backend.cert
       - ./frontend.key:/frontend.key
       - ./frontend.cert:/frontend.cert
