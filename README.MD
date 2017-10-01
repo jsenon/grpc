@@ -4,11 +4,11 @@ This section explains how to use Traefik and linkerd as reverse proxy for gRPC a
 
 # Traefik
 
-With self-signed certificates.
+Server hello listen on port :7777
 
-Server backend.local listen on port :50051
+Server world listen on port :7778
 
-Traefik frontend.local listen on port :4443 and rediret to grpc server
+Traefik listen on port :4441 and rediret to http server
 
 ## gRPC Server certificat
 
