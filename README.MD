@@ -41,11 +41,7 @@ Traefik redirect to an https server
 
 # Linkerd
 
-Server backend.local listen on port :50052
-
-Linkerd frontend.local listen on port :50053 and rediret to grpc server
-
-Insecure Mode supported here
+Linkerd Demo GRPC 
 
 ## Launch Linkerd and grpc server
 
@@ -53,10 +49,12 @@ Insecure Mode supported here
  docker-compose -f docker-compose-linkerd.yml up
  ```
 
-Linkerd listen on port 50053 for incoming grpc connection
+Server Hello Run on 7777
+
+Server World Run on 7778
 
 ```
-./greeter_server&
+client -> Linkerd -> Hello -> Linkerd -> World
 ```
 
 ## Use it 
@@ -64,7 +62,12 @@ Linkerd listen on port 50053 for incoming grpc connection
 Launch Client
 
 ```
-./greeter_client 
+go get -u github.com/linkerd/linkerd-examples/docker/helloworld/helloworld-client
 ```
+
+```
+helloworld-client 127.0.0.1:4140
+```
+
 
 
