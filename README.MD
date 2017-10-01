@@ -69,5 +69,17 @@ go get -u github.com/linkerd/linkerd-examples/docker/helloworld/helloworld-clien
 helloworld-client 127.0.0.1:4140
 ```
 
+# Tips
+
+Greeter client came form google.golan.org/grpc/examples has been modified to send request to frontend.local:4443
+
+```
+greeter_client
+```
+
+Greeter Server came form google.golan.org/grpc/examples has been modified to received request to :50051
+
+
+
 
 
