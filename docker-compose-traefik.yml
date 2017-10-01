@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  proxy:
+    image: traefik:v1.4.0-rc3
+    command: --web --docker --docker.domain=docker.localhost --logLevel=DEBUG
+    networks:
+      - webgateway
+    ports:
+      - "80:80"
+      - "8080:8080"
+      - "4443:4443"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./traefik.toml:/traefik.toml
+      - ./backend.cert:/backend.cert
+      - ./frontend.key:/frontend.key
+      - ./frontend.cert:/frontend.cert
+
+networks:
+  webgateway:
+    driver: bridge
