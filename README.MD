@@ -33,7 +33,7 @@ client -> Traefik -> Hello -> traefik -> World
 Launch Client
 
 ```
-./curl localhost:7777
+./curl localhost:4140/toto
 ```
 
 ## Note/Issues
