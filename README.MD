@@ -4,11 +4,7 @@ This section explains how to use Traefik and linkerd as reverse proxy for gRPC a
 
 # Traefik
 
-Server hello listen on port :7777
-
-Server world listen on port :7778
-
-Traefik listen on port :4140 and rediret to http server
+ Traefik Server bench
 
 ## Traefik http 
 
@@ -18,9 +14,11 @@ Traefik listen on port :4140 and rediret to http server
 docker-compose -f docker-compose-traefik.yml up
 ```
 
-Server Hello Run on 7777
+Server hello listen on port :7777
 
-Server World Run on 7778
+Server world listen on port :7778
+
+Traefik listen on port :4140
 
 ```
 client -> Traefik -> Hello -> traefik -> World
@@ -42,9 +40,11 @@ Launch Client
 docker-compose -f docker-compose-traefik-grpc.yml up
 ```
 
-Server Hello Run on 7777
+Server hello listen on port :7777
 
-Server World Run on 7778
+Server world listen on port :7778
+
+Traefik listen on port :4140
 
 ```
 client -> Traefik -> Hello -> traefik -> World
@@ -67,23 +67,27 @@ Traefik don't manage grpc protocol. We can't define grpc route
 
 # Linkerd
 
-Linkerd Demo GRPC 
+Linkerd Server bench 
 
-## Launch Linkerd and grpc server
+## Linkerd gRPC
+
+### Launch Linkerd and grpc server
 
 ```
  docker-compose -f docker-compose-linkerd.yml up
  ```
 
-Server Hello Run on 7777
+Server hello listen on port :7777
 
-Server World Run on 7778
+Server world listen on port :7778
+
+Linkerd listen on port :4140 
 
 ```
 client -> Linkerd -> Hello -> Linkerd -> World
 ```
 
-## Use it 
+### Use it 
 
 Launch Client
 
