@@ -5,14 +5,53 @@ admin:
 routers:
 - protocol: h2
   experimental: true
-  label: grpc
+  label: grpc-in
   servers:
-  - port: 50053
+  - port: 4140
     ip: 0.0.0.0
   identifier:
     kind: io.l5d.header.path
     segments: 1
   dtab: |
-    / => /$/inet/127.0.0.1/50052;
+    /svc/helloworld.Hello => /$/inet/hello/7777;
+    /svc/helloworld.World => /$/inet/world/7778;   
+
+# - protocol: h2
+#   experimental: true
+#   label: grpc-out
+#   servers:
+#   - port: 4141
+#     ip: 0.0.0.0
+#   identifier:
+#     kind: io.l5d.header.path
+#     segments: 1
+#   dtab: |
+#     /srv => /$/inet/127.1/7777;
+   
+# - protocol: http
+#   experimental: true
+#   label: http-in
+#   servers:
+#   - port: 4140
+#     ip: 0.0.0.0
+#   identifier:
+#     kind: io.l5d.path
+#     segments: 1
+#   dtab: |
+#     / => /$/inet/127.0.0.1/7777;
    
 
+
+
+# - protocol: http
+#   experimental: true
+#   label: http-out
+#   servers:
+#   - port: 4141
+#     ip: 0.0.0.0
+#   identifier:
+#     kind: io.l5d.path
+#     segments: 1
+#   dtab: |
+#     / => /$/inet/127.0.0.1/7778;
+    
