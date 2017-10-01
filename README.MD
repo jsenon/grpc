@@ -62,6 +62,7 @@ helloworld-client 127.0.0.1:4140
 ## Note/Issues
 
 Traefik redirect only to an http server over http2
+
 Traefik don't manage grpc protocol. We can't define grpc route
 
 # Linkerd
