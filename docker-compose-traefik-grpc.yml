@@ -18,10 +18,10 @@ services:
     image: buoyantio/helloworld
     ports:
     - "7777:7777"
-    command: -addr :7777 -text Hello -target traefik:4140 
+    command: -addr :7777 -text Hello -target traefik:4140 -protocol grpc
   world:
     image: buoyantio/helloworld
     ports:
     - "7778:7778"
-    command: -addr :7778 -text world 
+    command: -addr :7778 -text world -protocol grpc
 

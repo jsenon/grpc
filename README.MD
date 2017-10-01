@@ -10,7 +10,9 @@ Server world listen on port :7778
 
 Traefik listen on port :4140 and rediret to http server
 
-## Launch traefik and grpc server
+## Traefik grpc 
+
+### Launch traefik and grpc server
 
 ```
 docker-compose -f docker-compose-traefik-grpc.yml up
@@ -24,13 +26,38 @@ Server World Run on 7778
 client -> Traefik -> Hello -> traefik -> World
 ```
 
-## Use it 
+### Use it 
 
 Launch Client
 
 ```
 ./curl localhost:4140/toto
 ```
+
+## Traefik http
+
+### Launch traefik and grpc server
+
+```
+docker-compose -f docker-compose-traefik.yml up
+```
+
+Server Hello Run on 7777
+
+Server World Run on 7778
+
+```
+client -> Traefik -> Hello -> traefik -> World
+```
+
+### Use it 
+
+Launch Client
+
+```
+helloworld-client 127.0.0.1:4140
+```
+
 
 ## Note/Issues
 
