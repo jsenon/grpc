@@ -10,10 +10,6 @@ Server world listen on port :7778
 
 Traefik listen on port :4441 and rediret to http server
 
-## gRPC Server certificat
-
-Autosigned certificate has been generated for frontend.local and backend.local
-
 ## Launch traefik and grpc server
 
 ```
@@ -85,7 +81,9 @@ Greeter Server came form google.golan.org/grpc/examples has been modified to rec
 ./greeter_server&
 ```
 
+### gRPC Server certificat
 
+Autosigned certificate has been generated for frontend.local and backend.local
 
 
 
