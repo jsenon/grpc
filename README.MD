@@ -113,6 +113,14 @@ Greeter Server came form google.golan.org/grpc/examples has been modified to rec
 
 Autosigned certificate has been generated for frontend.local and backend.local
 
+# Traefik Error
+
+```
+hello_1    | 2017/10/01 12:40:41 transport: http2Client.notifyError got notified that the client transport was broken read tcp 172.20.0.4:36840->172.20.0.3:4140: read: connection reset by peer.
+hello_1    | 2017/10/01 12:40:41 transport: http2Client.notifyError got notified that the client transport was broken unexpected EOF.
+hello_1    | 2017/10/01 12:40:41 grpc: addrConn.resetTransport failed to create client transport: connection error: desc = "transport: write tcp 172.20.0.4:36844->172.20.0.3:4140: write: broken pipe"; Reconnecting to {traefik:4140 <nil>}
+```
+
 
 
 
