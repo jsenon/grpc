@@ -1,10 +1,4 @@
-Test AsciiDoc
-========================
-
-== Test
-test
-
-=== test2
-test2
+== This is a test
+this is a test of using asciidoc
 
 
